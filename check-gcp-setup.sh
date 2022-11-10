@@ -55,7 +55,7 @@ fi
 # Check presence of credentials
 if [ -z "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
     echo '❌ Unset environment variable GOOGLE_APPLICATION_CREDENTIALS'
-    echo 'Please add to your ~/.aliases: export GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/your/credentials.json'
+    echo 'Please add to your ~/.zshrc: export GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/your/credentials.json'
 else
     echo "✅ credentials file found in: $GOOGLE_APPLICATION_CREDENTIALS"
 fi
@@ -65,7 +65,7 @@ creds_type=$(cat "$GOOGLE_APPLICATION_CREDENTIALS" | jq '.type')
 creds_account=$(cat "$GOOGLE_APPLICATION_CREDENTIALS" | jq '.client_email')
 if [ "$creds_type" = 'service_account' ]; then
     echo '❌ Unset environment variable GOOGLE_APPLICATION_CREDENTIALS'
-    echo 'Please add to your ~/.aliases: export GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/your/credentials.json'
+    echo 'Please add to your ~/.zsrhc: export GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/your/credentials.json'
 else
     echo "✅ credentials are for the service account: $creds_account"
 fi
