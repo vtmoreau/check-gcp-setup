@@ -45,7 +45,7 @@ fi
 
 # Check active service account
 service_accounts_number=$(gcloud iam service-accounts list | wc -l)
-if [ "$service_accounts_number" -ge 1 ] ; then
+if [ "$service_accounts_number" -ge 2 ] ; then
     echo '❌ no service account exist for this project, please create one'
     exit 1
 else
